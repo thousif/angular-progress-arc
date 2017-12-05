@@ -36,6 +36,8 @@
                 size:             '@', // Size of element in pixels.
                 strokeWidth:      '@', // Width of progress arc stroke.
                 stroke:           '@', // Color/appearance of stroke.
+                stopStroke:       '@', // Color/appearance of stroke.
+                stopComplete:     '&', // Color/appearance of stroke.
                 counterClockwise: '@', // Boolean value indicating
                 complete:         '&', // Expression evaluating to float [0.0, 1.0]
                 background:       '@'  // Color of the background ring. Defaults to null.
@@ -75,6 +77,17 @@
                         'ng-attr-stroke-width="{{strokeWidthCapped}}"' +
                         'ng-attr-stroke-dasharray="{{circumference}}"' +
                         'ng-attr-stroke-dashoffset="{{(1 - complete()) * circumference}}"' +
+                        'ng-attr-transform="rotate({{offset}}, {{size/2}}, {{size/2}})' +
+                            '{{ (counterClockwise && counterClockwise != \'false\') ? \' translate(0, \' + size + \') scale(1, -1)\' : \'\' }}"' +
+                        '/>' +
+                    '<circle class="ngpa-progress" fill="none" ' +
+                        'ng-attr-cx="{{size/2}}" ' +
+                        'ng-attr-cy="{{size/2}}" ' +
+                        'ng-attr-r="{{radius}}" ' +
+                        'ng-attr-stroke="{{stopStroke}}" ' +
+                        'ng-attr-stroke-width="{{strokeWidthCapped}}"' +
+                        'ng-attr-stroke-dasharray="{{circumference}}"' +
+                        'ng-attr-stroke-dashoffset="{{(1 - stopComplete()) * circumference}}"' +
                         'ng-attr-transform="rotate({{offset}}, {{size/2}}, {{size/2}})' +
                             '{{ (counterClockwise && counterClockwise != \'false\') ? \' translate(0, \' + size + \') scale(1, -1)\' : \'\' }}"' +
                         '/>' +

@@ -1,11 +1,11 @@
 angular-progress-arc
 ====================
 
-An [AngularJS](https://angularjs.org/) directive for displaying a circular progress meter.
+An [AngularJS](https://angularjs.org/) directive for displaying a circular progress meter. Forked repo for supporting two values.
 
-<p align="center"><img src="http://mathewbyrne.github.io/angular-progress-arc/img/arcs.png" /></p>
+<p align="center"><img src="http://thousif.github.io/angular-progress-arc/img/arcs.png" /></p>
 
-[Demo](http://mathewbyrne.github.io/angular-progress-arc/)
+[Demo](http://thousif.github.io/angular-progress-arc/)
 
 Features
 ========
@@ -13,18 +13,13 @@ Features
 - Displays a circular progress meter.
 - Utilises SVG for rendering.
 - Adjustable dimensions, color and thickness.
+- Progress with two sections.
 - No additional dependencies outside of AngularJS.
 
 Installation
 ============
 
-This module can be installed using bower:
-
-```shell
-bower install angular-progress-arc --save
-```
-
-Otherwise, simply add the `angular-progress-arc.min.js` file to your project.
+simply add the `angular-progress-arc.min.js` file to your project.
 
 Usage
 =====
@@ -41,8 +36,10 @@ Add a `progress-arc` element to your application as required.
 <progress-arc
     size="{integer}"
     stroke="{string}"
+    stop-stroke="{stroke}"
     stroke-width="{integer}"
     complete="{expression}"
+    stop-complete="{expression}"
     counter-clockwise="{string}"
     background="{string}">
 </progress-arc>
@@ -53,8 +50,10 @@ Attributes
 
 - `size` defines the pixel width and height for the svg element.  This defaults to __200__.
 - `stroke` defines the color of the progress arc. This should be a valid [stroke property](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Fills_and_Strokes#Stroke) for an SVG circle element.  This defaults to __black__.
+- `stop-stroke` defines the second color of the progress arc.
 - `stroke-width` defines the width of the progress arc line in pixels. This should be a value between 1 and `size` / 2. This defaults to __20__.
 - `complete` is an expression that should evaluate to a float value between 0.0 and 1.0; where 0.0 is an empty progress arc, and 1.0 is a full ring.
+- `stroke-complete` is an expression for the second stroke that should evaluate to a float value between 0.0 and 1.0; where 0.0 is an empty progress arc, and 1.0 is a full ring.
 - `counter-clockwise` is a boolean value that will render the progress arc in a counter-clockwise direction. Any value Javascript would recognise as true will be treated as such, with the exception of the literal string __false__ which will be treated as a boolean `false`.
 - `background` defines the color of the ring background. If not defined, no background is rendered.
 

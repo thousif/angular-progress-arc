@@ -2,7 +2,7 @@
   "name": "angular-progress-arc",
   "version": "1.0.0",
   "authors": [
-    "Mathew Byrne <mathewbyrne@gmail.com>"
+    "Mathew Byrne <mathewbyrne@gmail.com>","Thousif Jowhar<thousif20@gmail.com>"
   ],
   "description": "AngularJS directive for displaying a circular progress meter.",
   "main": "angular-progress-arc.js",
@@ -13,7 +13,7 @@
     "svg"
   ],
   "license": "MIT",
-  "homepage": "http://mathewbyrne.github.io/angular-progress-arc/",
+  "homepage": "http://thousif.github.io/angular-progress-arc/",
   "ignore": [
     "**/.*",
     "node_modules",
